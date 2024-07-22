@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/jpg" href="./assets/weather-app.png"/>
     <link href="./output.css" rel="stylesheet">
     <title>Weather Forecast App</title>
 </head>
@@ -11,7 +12,7 @@
     <div id="container">
         <div id="weatherInput">
             <h1>Enter a City Name</h1>
-            <input type="text" placeholder="E.g., New York, London, Tokyo">
+            <input id="cityInput" type="text" placeholder="E.g., New York, London, Tokyo">
             <button id="search">Search</button>
             <div id="separator">
                 <button id="location">Use Current Location</button>
@@ -19,21 +20,62 @@
             <div id="weatherData">
                 <div id="CurrentWeather">
                     <div id="information">
-                        <h2>London 21.07.2024</h2>
-                        <h4>Temperature: 7.06°C</h4>
-                        <h4>Wind: 2.85 M/S</h4>
-                        <h4 class="underline font-extrabold">Humidity: 88%</h4>
+                            <h3>(————)</h3>
+                            <img src="" alt="">
+                            <h4>Temperature: ——°C</h4>
+                            <h4>Wind: ——M/S</h4>
+                            <h4>Humidity: ——%</h4>
                     </div>
                     <div id="icon">
                         <img src="./assets/rainy.png" alt="rain" class="w-20 h-20">
                         <h4>Moderate Rain</h4>
                     </div>
                 </div>
+                <div id="daysForecast">
+                    <h2>5 Days Forecst</h2>
+                    <ul id="weather-cards">
+                        <li id="card">
+                            <h3>(————)</h3>
+                            <img src="" alt="">
+                            <h4>Temperature: ——°C</h4>
+                            <h4>Wind: ——M/S</h4>
+                            <h4>Humidity: ——%</h4>
+                        </li>
+                        <li id="card">
+                            <h3>(————)</h3>
+                            <img src="" alt="">
+                            <h4>Temperature: ——°C</h4>
+                            <h4>Wind: ——M/S</h4>
+                            <h4>Humidity: ——%</h4>
+                        </li>
+                        <li id="card">
+                            <h3>(————)</h3>
+                            <img src="" alt="">
+                            <h4>Temperature: ——°C</h4>
+                            <h4>Wind: ——M/S</h4>
+                            <h4>Humidity: ——%</h4>
+                        <li id="card">
+                            <h3>(————)</h3>
+                            <img src="" alt="">
+                            <h4>Temperature: ——°C</h4>
+                            <h4>Wind: ——M/S</h4>
+                            <h4>Humidity: ——%</h4>
+                        </li>
+                        <li id="card">
+                            <h3>(————)</h3>
+                            <img src="" alt="">
+                            <h4>Temperature: ——°C</h4>
+                            <h4>Wind: ——M/S</h4>
+                            <h4>Humidity: ——%</h4>
+                        </li>
+                    </ul>
+                </div>
+                
 
             </div>
             
         </div>
     </div>
-    
+<script src="script.js" defer></script>  
 </body>
 </html>
