@@ -1,5 +1,6 @@
 const serachButton = document.getElementById("search");
 const cityInput = document.getElementById("cityInput");
+const locationButton = document.getElementById("location");
 const currentWeatherDiv = document.getElementById("CurrentWeather");
 const weatherCardDiv = document.getElementById("weather-cards");
 
@@ -86,5 +87,29 @@ fetch(GEOCODING_API_URL).then(res => res.json())
                         
 }
 
+const getUserInputs = () => {
+    navigator.geolocation.getCurrentPosition(
+    position => {
+        const {latitude, longitude} = position.coords;
+        const REVERSE_GEOCODING_URL = `http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${API_KEY}`;
+        fetch(REVERSE_GEOCODING_URL).then(res => res.json())            
+                        .then(data => { 
+                            const {name} = data[0];
+                            getWeatherDetails(name,latitude,longitude);
+                        }).catch(() => {
+                            alert("Error occured while fetching the city!");
+                        });
+    },
+    error => {
+        if(error.code === error.PERMISSION_DENIED){
+            alert("geolocation request Denied.Please reset location permission to grand access again.");
+        }
+    }
+);
 
+}
+
+
+locationButton.addEventListener("click",getUserInputs);
 serachButton.addEventListener("click", getCityInputs);
+cityInput.addEventListener("keyup", e=> e.key === "Enter" && getCityInputs() );
