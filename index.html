@@ -7,16 +7,16 @@
     <link href="./output.css" rel="stylesheet">
     <title>Weather Forecast App</title>
 </head>
-<body>
-    <h1>Weather Dashboard</h1>
-    <div id="container">
-        <div id="weatherInput">
-            <h1>Enter a City Name</h1>
-            <input id="cityInput" type="text" placeholder="E.g., New York, London, Tokyo">
-            <button id="search">Search</button>
-            <div id="separator">
-                <button id="location">Use Current Location</button>
-            </div>
+<body class="m-0 p-0 box-border font-serif" style="background-image: url('./assets/background.jpg')">
+    <h1 class="text-3xl font-bold  text-black bg-white text-center">Weather Dashboard</h1>
+    <div class="flex flex-row p-5 gap-32"id="container">
+        <div class="w-72 h-14 px-px  rounded my-2.5 text-xl" id="weatherInput">
+            <h1 class="text-white text-xl font-bold">Enter a City Name</h1>
+            <input class="w-64 h-9 px-px cursor-pointer text-sm font-bold pl-5" id="cityInput" type="text" placeholder="E.g., New York, London, Tokyo" >
+            <button class="w-64 text-center bg-white text-sm mt-4 p-2 font-bold hover:bg-purple-500 hover:text-white hover:translate-y-1" id="search">Search</button>
+            <div class="mt-3 text-white" id="separator">———————or———————</div>
+                <button class="w-64 text-center bg-gray-400 text-sm mt-4 p-2 font-bold" id="location">Use Current Location</button>
+        </div>
             <div id="weatherData">
                 <div id="CurrentWeather">
                     <div id="information">
@@ -70,11 +70,7 @@
                         </li>
                     </ul>
                 </div>
-                
-
-            </div>
-            
-        </div>
+            </div>    
     </div>
 <script src="script.js" defer></script>  
 </body>
